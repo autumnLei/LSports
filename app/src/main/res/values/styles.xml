@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Base application theme.-->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#6699ff</item>
+        <item name="colorPrimaryDark">#6699ff</item>
+        <item name="colorAccent">#6699ff</item>
+
+
+        <!--<item name="android:windowTranslucentStatus">false</item>-->
+        <!--<item name="android:windowTranslucentNavigation">false</item>-->
+        <!--<item name="android:statusBarColor">#6699ff</item>-->
+    </style>
+
+    <style name="MessageActivityTheme" parent="AppTheme"></style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="NoTitleFullscreen" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <!-- ToolBar菜单样式 -->
+    <style name="ToolbarTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+        <item name="actionMenuTextColor">#000000</item> <!--  敲定颜色-->
+        <item name="android:textSize">18sp</item> <!--  搞掂字体大小-->
+    </style>
+</resources>

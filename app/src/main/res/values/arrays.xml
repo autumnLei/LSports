@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="url4">
+        <item>https://cdn.pixabay.com/photo/2015/11/22/11/22/badminton-1056128_960_720.jpg</item>
+        <item>http://bpic.588ku.com/back_pic/04/18/84/44582ac757ea22e.jpg!ww650</item>
+        <item>https://cdn.pixabay.com/photo/2013/05/02/21/23/uss-nimitz-108622_960_720.jpg</item>
+    </array>
+    <string-array name="日期">
+        <item >星期一</item>
+        <item >星期二</item>
+        <item >星期三</item>
+        <item >星期四</item>
+        <item >星期五</item>
+        <item >星期六</item>
+        <item >星期天</item>
+    </string-array>
+    <string-array name="排序">
+        <item>价格最低</item>
+        <item>距离最近</item>
+        <item>综合排序</item>
+    </string-array>
+    <string-array name="区域">
+        <item>所有区域</item>
+    </string-array>
+    <string-array name="筛选">
+        <item>室内</item>
+    </string-array>
+
+</resources>
