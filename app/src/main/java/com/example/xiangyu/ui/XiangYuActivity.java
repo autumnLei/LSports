@@ -3,6 +3,7 @@ package com.example.xiangyu.ui;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
@@ -24,7 +25,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.baidu.location.BDLocation;
@@ -61,6 +65,8 @@ public class XiangYuActivity extends AppCompatActivity implements OnBannerListen
     String TAG = "555";
     static final int REFRESH_COMPLETE = 0X1112;
     static final boolean LOGIN = true;
+    @InjectView(R.id.status_bar)
+    LinearLayout status;
     @InjectView(R.id.toolbar)
     Toolbar toolbar;
     @InjectView(R.id.recycler_view)
@@ -97,6 +103,13 @@ public class XiangYuActivity extends AppCompatActivity implements OnBannerListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //隐藏状态栏
+        Window window = this.getWindow();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        }
+
         setContentView(R.layout.activity_xiang_yu);
         ButterKnife.inject(this);
         //获取权限和位置
@@ -108,6 +121,17 @@ public class XiangYuActivity extends AppCompatActivity implements OnBannerListen
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setHomeAsUpIndicator(R.drawable.own);
         }
+
+        //给toolbar上部添加填充状态栏的view
+        double statusBarHeight = Math.ceil(25 * MyApplication.getContext().getResources().getDisplayMetrics().density);
+        LinearLayout.LayoutParams s = (LinearLayout.LayoutParams)
+                status.getLayoutParams();
+        s.height = (int)statusBarHeight;
+        status.setLayoutParams(s);
+        status.setBackgroundColor(getResources().getColor(R.color.background));
+        Log.d("22222", "onCreate: "+statusBarHeight);
+
+
         navView.setCheckedItem(R.id.nav_own);
         navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
